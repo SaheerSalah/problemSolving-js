@@ -82,4 +82,14 @@ function longest(s1, s2) {
 }
 console.log(longest("aretheyhere","yestheyarehere" ));
 
+// Task8
+// In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+function filter_list(list) {
+  return list.filter((item)=>typeof item == "number");  
+ }
 
+//Task9
+// In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+var isSquare = function(n){
+  return Math.sqrt(n)%1==0 ;
+}

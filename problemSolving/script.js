@@ -97,6 +97,7 @@ var isSquare = function(n){
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
+// الفوريتش لا بترجع قيمة ولا بترجع مصفوفة ولكن تنفذ عملية لكل عنصر 
 const vowels = ["a", "e", "i", "o", "u"];
 function getCount(str) {
   let count = 0;
@@ -109,5 +110,22 @@ function getCount(str) {
 function XO(str) {
   const Omatch = str.match(/o/gi);
   const Xmatch= str.match(/x/gi);
-  return (Omatch? Omatch.length: 0) == (Xmatch? Xmatch.length: 0);
+  return (Omatch && Omatch.length) == (Xmatch && Xmatch.length);
+}
+// Task 12
+// Make a program that filters a list of strings and returns a list with only your friends name in it.
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+function friend(friends){
+  let fre = friends.filter((friend)=>friend.length==4);
+  return fre;
+};
+
+// Task 13
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+// Give your answer as a string matching "odd" or "even".
+// If the input array is empty consider it as: [0] (array with a zero).
+
+function oddOrEven(array) {
+  return (array.reduce((pre, current)=>pre+current,0))%2==0 ?"even": "odd";
 }

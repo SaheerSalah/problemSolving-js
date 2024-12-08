@@ -103,3 +103,11 @@ function getCount(str) {
   str.split("").forEach((char)=> vowels.includes(char)? count++ :count);
   return count;
 }
+// Task 11
+//Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+// لو ما فيه ماتش رح ترجع نلل وما بنفع اجيب الطول ل النلل لهيك بالاول بفحص ادا فيه ماتش اساسا
+function XO(str) {
+  const Omatch = str.match(/o/gi);
+  const Xmatch= str.match(/x/gi);
+  return (Omatch? Omatch.length: 0) == (Xmatch? Xmatch.length: 0);
+}

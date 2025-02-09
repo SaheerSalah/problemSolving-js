@@ -150,3 +150,38 @@ function highAndLow(numbers){
   return `${Math.max(...toNumArr)} ${Math.min(...toNumArr)}`;
 }
 
+// & Task 16
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid! (odd-length >= 3)
+
+// shift use to convert [5] to 5 
+function stray(numbers) {
+  const seen = new Set();
+  if (numbers.length>=3){
+  const ArrduplicateNum = numbers.filter(item => {
+    if (seen.has(item)) {
+      return true;
+    }
+    seen.add(item);
+    return false;
+  });
+  let duplicateNum = ArrduplicateNum.shift();
+   return numbers.filter(item => item!==duplicateNum).shift();
+  }
+    return ;
+}
+// const stray = nums => nums.reduce((x, y) => x ^ y);
+// const stray = numbers => numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num));
+
+
+// & Task 17
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+// The binary number returned should be a string.
+// Examples:(Input1, Input2 --> Output (explanation)))
+
+function addBinary(a,b) {
+  let number = a+b;
+  return number.toString(2);
+}
+

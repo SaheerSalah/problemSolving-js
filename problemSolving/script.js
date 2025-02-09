@@ -185,3 +185,19 @@ function addBinary(a,b) {
   return number.toString(2);
 }
 
+// & Task 18
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+function sortByLength (array) {
+  let sortedArray = array.sort((a, b) => a.length - b.length);
+  return sortedArray;
+}
+
+// & Task 19
+// You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+// نسبة الخطا هي عدد الاحرف الي بعد حرف ال m
+
+function printerError(s) {
+  const error = s.split("").filter(letter => letter > "m");
+  return `${error.length}/${s.length}`;    
+}

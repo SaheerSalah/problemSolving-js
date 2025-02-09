@@ -93,11 +93,10 @@ function filter_list(list) {
 var isSquare = function(n){
   return Math.sqrt(n)%1==0 ;
 }
-// TASK 10
+// TASK 10 
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
-// الفوريتش لا بترجع قيمة ولا بترجع مصفوفة ولكن تنفذ عملية لكل عنصر 
 const vowels = ["a", "e", "i", "o", "u"];
 function getCount(str) {
   let count = 0;
@@ -129,3 +128,25 @@ function friend(friends){
 function oddOrEven(array) {
   return (array.reduce((pre, current)=>pre+current,0))%2==0 ?"even": "odd";
 }
+
+// ** new start **
+
+// & Task 14
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with the lowest index. If you get an empty array/list, return an empty array/list.
+// Don't change the order of the elements that are left.
+
+function removeSmallest(numbers) {
+  let minNum = Math.min(...numbers);
+  let index = numbers.indexOf(minNum) ;
+  return numbers.filter((_, i) => i !== index);
+}
+
+// & Task 15 
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+function highAndLow(numbers){
+  let arrstring = numbers.split(" ");
+  let toNumArr = arrstring.map(num => Number(num));
+  return `${Math.max(...toNumArr)} ${Math.min(...toNumArr)}`;
+}
+

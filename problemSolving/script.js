@@ -201,3 +201,39 @@ function printerError(s) {
   const error = s.split("").filter(letter => letter > "m");
   return `${error.length}/${s.length}`;    
 }
+
+// & Task 20
+// Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+const binaryArrayToNumber = arr => {
+  return parseInt(arr.join(""), 2);
+};
+// لديك عدد ثنائي كنص	✅=> parseInt(binary, 2)
+// لديك عدد ثنائي مباشر (0b1101)	=>✅ .toString(10)
+
+// arr.join("") يحول [0, 0, 0, 1] إلى "0001" ✅
+// .toString(10) يحول النص "0001" إلى نفسه كنص "0001" ❌
+// المشكلة: الناتج يظل نصًا، وليس عددًا عشريًا!
+
+// const binaryArrayToNumber = arr => {
+//   return arr.join("").toString(10);
+// };
+// console.log(binaryArrayToNumber([0, 0, 0, 1]));
+
+
+// & Task 21
+// Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+function arithmetic(a, b, operator){
+  switch (operator){
+    case "add":
+      return a+b;
+    case "subtract":
+      return a-b;
+    case "multiply":
+      return a*b;
+    case "divide":
+      return a/b;
+    default:
+      return "خطأ: العملية غير صحيحة";
+  }
+
+}

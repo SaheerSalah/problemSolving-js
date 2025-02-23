@@ -237,3 +237,21 @@ function arithmetic(a, b, operator){
   }
 
 }
+
+// & Task 22
+// Count the number of divisors of a positive integer n.
+// Random tests go up to n = 500000, but fixed tests go higher.
+
+function getDivisorsCnt(n) {
+  let count = 0;
+  for (let i = 1; i * i <= n; i++) {
+    if (n % i === 0) {
+      count += (i * i === n) ? 1 : 2; 
+    }
+  }
+  return count;
+}
+
+
+
+// https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/javascript

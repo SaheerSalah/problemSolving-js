@@ -260,4 +260,12 @@ function gimme (triplet) {
   let sortedArray = [...triplet].sort((a,b)=> a-b)
   let middleValue = sortedArray[1];
   return triplet.indexOf(middleValue);
-  }
+}
+
+// & Task 24
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+
+function accum(s) {
+  let result =  s.split("").map((char, i) =>char.toUpperCase()+char.toLowerCase().repeat(i));
+   return result.join("-");
+}

@@ -252,6 +252,12 @@ function getDivisorsCnt(n) {
   return count;
 }
 
-
-
 // https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/javascript
+
+// & Task 23
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+function gimme (triplet) {
+  let sortedArray = [...triplet].sort((a,b)=> a-b)
+  let middleValue = sortedArray[1];
+  return triplet.indexOf(middleValue);
+  }
